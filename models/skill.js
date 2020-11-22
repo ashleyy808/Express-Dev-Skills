@@ -23,8 +23,8 @@ function getOne(id) {
 
 
 function create(skill) {
-    skills.post(skill)
-    return skill;
+    skills.push(skill)
+    //return skill;
 }
 
 function deleteOne(id) {

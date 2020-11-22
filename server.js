@@ -17,6 +17,12 @@ const app = express();
 // Configure server setting <-- app.set()
 app.set('view engine', 'ejs');
 
+app.use(function(req, res, next) {
+    console.log('Hello SEI!');
+    req.time = new Date().toLocaleTimeString();
+    next();
+  });
+
 // Mount our middleware <-- app.use()
    // static middleware for serving CSS, Front-end JS & Images
 app.use(methodOverride('_method'))  // POST /skills/1?_method=DELETE -> DELETE / skills/1

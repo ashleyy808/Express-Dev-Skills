@@ -9,13 +9,13 @@
 <body>
     <h1>Here's All Your Skills</h1>
     <ul>
-        <% skills.forEach(function(skill, i) { %>
+        <% skills.forEach(function(skill, idx) { %>
            <li>
-            <form class= "delete-form" action="/skills/<%= i %>?_method=DELETE" method="POST">
+            <form class= "delete-form" action="/skills/<%= idx %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
             </form>
 
-            <a href="/skills/<%= i %>">
+            <a href="/skills/<%= idx %>">
                 <%= skill.text %>
             </a>
                

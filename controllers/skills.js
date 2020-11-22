@@ -6,33 +6,43 @@ module.exports = {
     new: newSkill,
     create,
     delete: deleteSkill, 
-    edit,
-    update
+   edit,
+   update
 };
 
 
 function index(req, res) {
     res.render('skills/index', { 
         skills: Skill.getAll(),
+        time: req.time
     });
 }
-
+/*
 function show(req, res) {
     res.render('skills/show', {
         skillId: req.params.id,
         skill: Skill.getOne(req.params.id) // /skills/:id
     });
 }
+*/
+function show(req, res) {
+    res.render('skills/show', {
+        skill: Skill.getOne(req.params.id),
+        skillNum: parseInt(req.params.id) + 1
+    });
+}
 
 function newSkill(req, res) {
-    res.render('index/new');
+    res.render('skills/new');
 }
 
 function create(req,res) {
+    console.log(req.body);
     req.body.done = false;
-    Skill.create(req.body);
+    //Skill.create(req.body);
     res.redirect('/skills');  // Ask the browser to request GET /skills
 }
+
 
 function deleteSkill(req, res) {
     Skill.deleteOne(req.params.id);

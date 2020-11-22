@@ -21,14 +21,16 @@ router.get('/:id', skillsCtrl.show);
 // POST /index -> Create a new skills
 router.post('/', skillsCtrl.create); 
 
+//router.post('/:id', skillsCtrl.new); 
+
 // DELETE /index/:id -> delete route -- delete a specific skill
 router.delete('/:id', skillsCtrl.delete); 
 
 // GET /index/:id/edit - edit a skill-> take me to a page where I can make an edit
-router.get('/:id/edit', skillsCtrl.edit);  
+//router.get('/:id/edit', skillsCtrl.edit);  
 
 // PUT /index/:id - Update a skill - update a specific skill
-router.put('/:id', skillsCtrl.update);
+//router.put('/:id', skillsCtrl.update);
 
 
 
